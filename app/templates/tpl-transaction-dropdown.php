@@ -9,37 +9,44 @@ use Helpers\createDropDownList;
    aria-haspopup="true" aria-expanded="false">Transactions</a>
 
 <div class="dropdown-menu">
-    <?php if (sizeof($_SESSION['transactions']) === 0) : ?>
+
+    <?php
+
+    $dropDownHTML = '';
+
+    $dropDownHTML .= Helpers\createDropDownList(
+        $_SESSION['transactions']['normal'],
+        'Normal',
+        $SelectedTransactionId
+    );
+    $dropDownHTML .= Helpers\createDropDownList(
+        $_SESSION['transactions']['sisPayment'],
+        'Shop in shop',
+        $SelectedTransactionId
+    );
+    $dropDownHTML .= Helpers\createDropDownList(
+        $_SESSION['transactions']['charge'],
+        'Token charges',
+        $SelectedTransactionId
+    );
+    $dropDownHTML .= Helpers\createDropDownList(
+        $_SESSION['transactions']['authorizationHold'],
+        'Token authorization holds',
+        $SelectedTransactionId
+    );
+    $dropDownHTML .= Helpers\createDropDownList(
+        $_SESSION['transactions']['refund'],
+        'Refunds',
+        $SelectedTransactionId
+    );
+
+    echo $dropDownHTML;
+
+    ?>
+
+    <?php if ($dropDownHTML === '') : ?>
         <h6 class="dropdown-header">There is no transactions yet...</h6>
     <?php else : ?>
-        <?php
 
-        echo Helpers\createDropDownList(
-            $_SESSION['transactions']['normal'],
-            'Normal',
-            $SelectedTransactionId
-        );
-        echo Helpers\createDropDownList(
-            $_SESSION['transactions']['sisPayment'],
-            'Shop in shop',
-            $SelectedTransactionId
-        );
-        echo Helpers\createDropDownList(
-            $_SESSION['transactions']['charge'],
-            'Token charges',
-            $SelectedTransactionId
-        );
-        echo Helpers\createDropDownList(
-            $_SESSION['transactions']['authorizationHold'],
-            'Token authorization holds',
-            $SelectedTransactionId
-        );
-        echo Helpers\createDropDownList(
-            $_SESSION['transactions']['refund'],
-            'Refunds',
-            $SelectedTransactionId
-        );
-
-        ?>
     <?php endif; ?>
 </div>
