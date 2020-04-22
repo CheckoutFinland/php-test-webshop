@@ -6,15 +6,9 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - "80:80"
-    # PHP cannot read env : https://www.php.net/manual/en/ini.core.php#ini.variables-order
-    # did not get it working so defined these app/config/configuration.php
-    # environment:
-    #   CO_API_URL: 'http://host.docker.internal:3001'
-    #   CO_SHOP_URL: 'http://localhost:80'
     volumes:
       - ./app:/var/www/html
     working_dir:
       /var/www/html
     command:
-      bash -c "/etc/init.d/apache2 start -DFOREGROUND && composer install && sleep infinity"
-
+      bash -c "apachectl start && composer install && sleep infinity"

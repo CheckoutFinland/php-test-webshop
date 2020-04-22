@@ -6,5 +6,3 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 # php-xml is required by php_codesniffer
 RUN apt update -y && \
     apt-get install php libapache2-mod-php php-xml composer -y
-
-COPY ./000-default.conf /etc/apache2/sites-available/000-default.conf

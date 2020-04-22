@@ -236,6 +236,7 @@ class CreditCards
     public function __construct()
     {
         $this->creditCards = array();
+
         array_push(
             $this->creditCards,
             new CreditCard(
