@@ -8,10 +8,11 @@ if (isset($_GET['resetWebShop'])) {
 
 if (!isset($_SESSION['transactions'])) {
     $_SESSION['transactions'] = [];
-}
-
-if (!isset($_SESSION['tokenTransactions'])) {
-    $_SESSION['tokenTransactions'] = [];
+    $_SESSION['transactions']['normal'] = [];
+    $_SESSION['transactions']['sisPayment'] = [];
+    $_SESSION['transactions']['charge'] = [];
+    $_SESSION['transactions']['authorizationHold'] = [];
+    $_SESSION['transactions']['refund'] = [];
 }
 
 // autoload composer stuff

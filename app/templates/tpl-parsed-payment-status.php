@@ -115,7 +115,7 @@
 
 <?php if ($response->status === 'ok' && $response->amount && $response->amount > 0 ) : ?>
     <h5>Refund</h5>
-    <form class="form-inline" action="./payment-refund.php" method="GET">
+    <form class="form" action="./payment-refund.php" method="GET">
         <!-- Another variation with a button -->
         <div class="input-group">
             <input type="hidden" value="<?=$response->transactionId?>" name="checkout-transaction-id">

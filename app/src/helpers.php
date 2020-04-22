@@ -175,7 +175,7 @@ function createDropDownList($list, $header, $SelectedTransactionId)
 {
     $html = '';
 
-    if (sizeof($list)) {
+    if (isset($list) && sizeof($list)) {
         $html .= '<h6 class="dropdown-header">' . $header . '</h6>';
         foreach ($list as $txId => $txData) {
             $html .= '<a class="dropdown-item ' . ($txId === $SelectedTransactionId ? 'active' : '') . '"
