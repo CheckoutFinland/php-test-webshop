@@ -1,0 +1,74 @@
+.paymentProviders {
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.paymentProviders form {
+    margin: 0 0.3em 0.3em 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.paymentProviderbutton {
+    width: 6em;
+    padding: 0.3em;
+    margin: 0 0 0 0;
+    border-radius: 0.4em;
+}
+
+.paymentProviderbutton > img {
+    position: relative;
+}
+
+.paymentProviderbutton > img[alt] {
+    font-size: 0.5em;
+}
+
+/* style this to fit your needs */
+/* and remove [alt] to apply to all images*/
+.paymentProviderbutton > img[alt]:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    font-family: 'Helvetica';
+    font-weight: 300;
+    line-height: 2;
+    text-align: center;
+    content: attr(alt);
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.navbar-brand img {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.5em;
+}
+
+.jumbotron {
+    padding: 1.5rem 1rem;
+}
+
+#accordion {
+    margin-bottom: 16px;
+}
