@@ -4,7 +4,7 @@
  * This is a very simple Checkout payment API class to create and manage payments
  * Should not be used in production environments as such but as example instead
  *
- * PHP version 5
+ * PHP version 7
  *
  * @category CheckoutPSPAPI
  * @package  CheckooutAPI
