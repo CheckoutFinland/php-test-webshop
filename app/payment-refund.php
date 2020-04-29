@@ -13,6 +13,7 @@ if (isset($_GET['checkout-transaction-id'])) {
         'amount' => (int)$_GET['refund-amount'],
         'refundStamp' => str_replace('.', 'TS', microtime(true)),
         'refundReference' => \Helpers\finnishBankReference(),
+        'email' => 'example@example.com',
         'callbackUrls' => [
             'success' => CO_SHOP_URL . '/refund-return.php',
             'cancel' => CO_SHOP_URL . '/refund-return.php'
