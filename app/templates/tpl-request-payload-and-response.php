@@ -17,7 +17,7 @@
         </div>
         <div id="collapse1" class="collapse" aria-labelledby="request" data-parent="#accordion">
             <div class="card-body">
-                <pre style="font-size: .6em;"><code><?=json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)?></code></pre>
+                <pre style="font-size: .6em;"><code><?=json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)?></code></pre>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@
         </div>
         <div id="collapse2" class="collapse" aria-labelledby="response" data-parent="#accordion">
             <div class="card-body">
-                <pre style="font-size: .6em;"><code><?=json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)?></code></pre>
+                <pre style="font-size: .6em;"><code><?=json_encode($response, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)?></code></pre>
             </div>
         </div>
     </div>
