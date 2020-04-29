@@ -1,18 +1,6 @@
-<?php
-
-$SelectedTransactionId = false;
-
-// transaction id from url parameters
-if (isset($_GET['checkout-transaction-id'])) {
-    $SelectedTransactionId = $_GET['checkout-transaction-id'];
-} elseif (isset($response->transactionId)) {
-    $SelectedTransactionId = $response->transactionId;
-}
-
-?>
 <html>
     <head>
-    <title>Checkout Test Web Shop</title>
+    <title>PHP test web shop</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -101,7 +89,7 @@ if (isset($_GET['checkout-transaction-id'])) {
         <h5>Error</h5>
         <div class="row"><div class="col-12"><div class="alert alert-danger" role="alert"><?=$response->message?></div></div></div>
 
-        <?php if ($response->meta) : ?>
+        <?php if (isset($response->meta)) : ?>
             <?php foreach ($response->meta as $meta) : ?>
                 <div class="row"><div class="col-12"><div class="alert alert-secondary" role="alert">Meta : <?=$meta?></div></div></div>
             <?php endforeach; ?>

@@ -12,6 +12,15 @@ use Helpers\createDropDownList;
 
     <?php
 
+    $SelectedTransactionId = false;
+
+    // transaction id from url parameters
+    if (isset($_GET['checkout-transaction-id'])) {
+        $SelectedTransactionId = $_GET['checkout-transaction-id'];
+    } elseif (isset($response->transactionId)) {
+        $SelectedTransactionId = $response->transactionId;
+    }
+
     $dropDownHTML = '';
 
     $dropDownHTML .= Helpers\createDropDownList(
